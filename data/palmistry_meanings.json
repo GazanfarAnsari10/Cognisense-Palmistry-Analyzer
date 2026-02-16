@@ -1,0 +1,105 @@
+{
+  "life_line": {
+    "long_deep": "Strong vitality, robust health, and potential for a long, energetic life. Your constitution is naturally strong.",
+    "short_clear": "Intense life energy focused on quality experiences. You prefer depth over breadth in life pursuits.",
+    "broken": "Significant life changes and transitions ahead. Health challenges may arise but can be overcome with care.",
+    "chained": "Health fluctuations throughout life. Pay attention to stress management and regular health check-ups.",
+    "curved": "Adventurous spirit with love for travel and new experiences. Life will be filled with variety and excitement.",
+    "straight": "Steady, consistent life path with reliable health and energy levels.",
+    "faint": "Need for greater attention to health and vitality. Lifestyle changes may be beneficial."
+  },
+  "heart_line": {
+    "long_curved": "Warm, romantic nature with expressive emotions. Relationships are central to your happiness and fulfillment.",
+    "short_straight": "Reserved approach to emotions and love. Practical in relationships, taking time to open up fully.",
+    "ends_under_index": "High standards in love and relationships. Selective in choosing partners, preferring quality over quantity.",
+    "ends_under_middle": "Independent nature in relationships. Self-reliant with strong personal boundaries in love.",
+    "broken": "Emotional healing needed from past heartbreak or trauma. Growth through relationship challenges.",
+    "chained": "Complex emotional patterns. Multiple relationships or emotional complications may arise.",
+    "deep": "Intense emotional capacity with deep feelings and strong romantic connections.",
+    "faint": "More reserved emotionally. Difficulty expressing feelings openly in relationships."
+  },
+  "head_line": {
+    "long_straight": "Logical, analytical thinking with excellent problem-solving abilities. Practical approach to life decisions.",
+    "long_curved": "Creative intelligence combined with imaginative thinking. Innovative solutions and artistic inclinations.",
+    "short": "Quick decision-making abilities. Prefer action over prolonged deliberation. Instinctive responses.",
+    "sloped": "Strong creative and artistic inclinations. Intuitive problem-solving with imaginative approaches.",
+    "broken": "Periods of mental growth and changing thought patterns. Evolution in thinking style throughout life.",
+    "deep": "Strong mental focus and concentration abilities. Excellent memory and learning capacity.",
+    "forked": "Multiple interests and talents. Ability to see different perspectives simultaneously.",
+    "chained": "Scattered thinking at times. Need for focus and mental organization techniques."
+  },
+  "fate_line": {
+    "present_clear": "Strong sense of purpose and destiny. Clear direction in life with predetermined path to success.",
+    "absent": "Self-made destiny with freedom from predetermined paths. Create your own opportunities and direction.",
+    "starts_late": "Late bloomer who finds major success after age 35. Patience will lead to significant achievements.",
+    "multiple": "Multiple career paths and diverse interests. Talented in various fields with changing professional focus.",
+    "broken": "Career changes and varied professional journey. Adaptability in work life with multiple transitions.",
+    "deep": "Strong career focus with unwavering professional direction. Dedicated to chosen path.",
+    "faint": "Flexible career approach. Less rigid professional structure allows for varied opportunities.",
+    "ends_early": "Early career peak or change in life direction. Major shift in priorities during middle age."
+  },
+  "hand_shapes": {
+    "square": "Practical, reliable, and methodical personality. Traditional values with strong work ethic and organizational skills.",
+    "pointed": "Intuitive, artistic, and sensitive nature. Idealistic with strong spiritual inclinations and creative expression.",
+    "spatulate": "Energetic, adventurous, and innovative spirit. Active lifestyle with love for physical activities and new experiences.",
+    "conic": "Balanced, diplomatic, and adaptable personality. Good mediator with ability to see multiple perspectives.",
+    "mixed": "Complex personality combining different traits. Versatile nature with varied interests and abilities."
+  },
+  "finger_meanings": {
+    "thumb": {
+      "large": "Strong willpower and leadership abilities. Determined personality with excellent self-control.",
+      "small": "More collaborative approach. Prefers working with others rather than leading independently."
+    },
+    "index": {
+      "long": "Natural leadership qualities and ambition. Strong desire for success and recognition.",
+      "short": "Humble nature, prefers supporting roles. Less concerned with personal recognition or status."
+    },
+    "middle": {
+      "long": "Responsible, serious nature with strong moral compass. Takes duties and obligations seriously.",
+      "short": "Carefree attitude with less concern for conventional responsibilities. Values freedom and spontaneity."
+    },
+    "ring": {
+      "long": "Creative and artistic inclinations. Appreciation for beauty and aesthetic expression.",
+      "short": "More practical focus with less emphasis on artistic or creative pursuits."
+    },
+    "pinky": {
+      "long": "Excellent communication skills and business acumen. Natural ability in negotiations and relationships.",
+      "short": "Direct communication style. May struggle with complex negotiations or diplomatic situations."
+    }
+  },
+  "mounts": {
+    "venus": {
+      "prominent": "Warm, loving nature with strong appreciation for beauty and comfort. Generous and affectionate.",
+      "flat": "More reserved in emotional expression. Practical approach to love and relationships."
+    },
+    "mars": {
+      "prominent": "Courageous and assertive nature. Natural fighter with strong determination and resilience.",
+      "flat": "More peaceful disposition. Prefers harmony over conflict and competition."
+    },
+    "jupiter": {
+      "prominent": "Leadership abilities and ambitious nature. Natural desire for success and recognition.",
+      "flat": "More modest aspirations. Content with simpler achievements and recognition."
+    },
+    "saturn": {
+      "prominent": "Serious, responsible nature with strong moral principles. Excellent planning and organizational abilities.",
+      "flat": "More carefree attitude with less concern for long-term planning and conventional responsibilities."
+    },
+    "apollo": {
+      "prominent": "Creative talents and artistic inclinations. Natural appreciation for beauty and aesthetic expression.",
+      "flat": "More practical focus with less emphasis on artistic pursuits and creative expression."
+    },
+    "mercury": {
+      "prominent": "Excellent communication skills and business sense. Natural ability in negotiations and relationships.",
+      "flat": "More direct communication style. Less focus on complex business or diplomatic activities."
+    }
+  },
+  "special_marks": {
+    "star": "Special talent or significant event. Indicates exceptional ability or major life occurrence in related area.",
+    "cross": "Challenge or obstacle to overcome. Difficulty in the associated life area requiring attention and effort.",
+    "triangle": "Good fortune and positive outcomes. Favorable energy and successful developments expected.",
+    "square": "Protection and stability. Indicates safety and security in challenging situations.",
+    "island": "Temporary difficulty or confusion. Period of uncertainty that will resolve with time and patience.",
+    "chain": "Multiple challenges or complex situations. Series of related difficulties requiring persistence.",
+    "circle": "Rare mark indicating special significance. Major life event or exceptional circumstance."
+  }
+}

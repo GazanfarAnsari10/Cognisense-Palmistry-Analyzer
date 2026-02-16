@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Palmistry Reading - CogniSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>🔮 CogniSense</h1>
+                <p class="tagline">Your Palmistry Reading</p>
+            </div>
+            <a href="/" class="btn-secondary">New Reading</a>
+        </header>
+
+        <main class="results-content">
+            <!-- Overall Summary Section -->
+            <div class="summary-section">
+                <h2>📋 Your Palmistry Summary</h2>
+                <div class="summary-card" id="overallSummary">
+                    <p>Loading your personalized palmistry reading...</p>
+                </div>
+            </div>
+
+            <!-- Palm Images Section -->
+            <div class="images-section">
+                <h3>🖼️ Your Palm Analysis</h3>
+                <div class="images-grid">
+                    <div class="image-card">
+                        <h4>Original Image</h4>
+                        <img id="originalImage" alt="Original palm image">
+                    </div>
+                    <div class="image-card">
+                        <h4>Analyzed Palm</h4>
+                        <img id="analyzedImage" alt="Analyzed palm with detected lines">
+                        <div class="line-legend">
+                            <div class="legend-item">
+                                <div class="legend-color life-line"></div>
+                                <span>Life Line</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color heart-line"></div>
+                                <span>Heart Line</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color head-line"></div>
+                                <span>Head Line</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color fate-line"></div>
+                                <span>Fate Line</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personality Scores Section -->
+            <div class="scores-section">
+                <h3>📊 Personality Traits Analysis</h3>
+                <div class="scores-grid" id="personalityScores">
+                    <!-- Scores will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Life Aspects Section -->
+            <div class="aspects-section">
+                <h3>🌟 Life Aspects</h3>
+                <div class="aspects-grid" id="lifeAspects">
+                    <!-- Life aspects will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Detailed Line Analysis -->
+            <div class="lines-analysis">
+                <h3>🔍 Detailed Line Analysis</h3>
+                
+                <div class="line-analysis-grid">
+                    <!-- Life Line Analysis -->
+                    <div class="line-card" id="lifeLineCard">
+                        <div class="line-header">
+                            <h4>💚 Life Line</h4>
+                            <div class="line-score" id="lifeLineScore">--</div>
+                        </div>
+                        <div class="line-content">
+                            <p class="line-interpretation" id="lifeLineInterpretation">Loading...</p>
+                            <div class="line-characteristics" id="lifeLineCharacteristics">
+                                <!-- Characteristics will be populated -->
+                            </div>
+                            <div class="line-details" id="lifeLineDetails"></div>
+                        </div>
+                        <button class="learn-more-btn" onclick="toggleLineDetails('lifeLine')">Learn More</button>
+                        <div class="line-expanded" id="lifeLineExpanded" style="display: none;">
+                            <p><strong>About the Life Line:</strong> The life line reflects your vitality, health, and general well-being. It curves around the thumb and represents your life force and physical constitution.</p>
+                        </div>
+                    </div>
+
+                    <!-- Heart Line Analysis -->
+                    <div class="line-card" id="heartLineCard">
+                        <div class="line-header">
+                            <h4>❤️ Heart Line</h4>
+                            <div class="line-score" id="heartLineScore">--</div>
+                        </div>
+                        <div class="line-content">
+                            <p class="line-interpretation" id="heartLineInterpretation">Loading...</p>
+                            <div class="line-characteristics" id="heartLineCharacteristics">
+                                <!-- Characteristics will be populated -->
+                            </div>
+                            <div class="line-details" id="heartLineDetails"></div>
+                        </div>
+                        <button class="learn-more-btn" onclick="toggleLineDetails('heartLine')">Learn More</button>
+                        <div class="line-expanded" id="heartLineExpanded" style="display: none;">
+                            <p><strong>About the Heart Line:</strong> The heart line runs horizontally below your fingers and represents your emotional nature, relationships, and approach to love.</p>
+                        </div>
+                    </div>
+
+                    <!-- Head Line Analysis -->
+                    <div class="line-card" id="headLineCard">
+                        <div class="line-header">
+                            <h4>🧠 Head Line</h4>
+                            <div class="line-score" id="headLineScore">--</div>
+                        </div>
+                        <div class="line-content">
+                            <p class="line-interpretation" id="headLineInterpretation">Loading...</p>
+                            <div class="line-characteristics" id="headLineCharacteristics">
+                                <!-- Characteristics will be populated -->
+                            </div>
+                            <div class="line-details" id="headLineDetails"></div>
+                        </div>
+                        <button class="learn-more-btn" onclick="toggleLineDetails('headLine')">Learn More</button>
+                        <div class="line-expanded" id="headLineExpanded" style="display: none;">
+                            <p><strong>About the Head Line:</strong> The head line represents your thinking style, intelligence, and approach to problem-solving. It shows how you process information and make decisions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fate Line Analysis -->
+                    <div class="line-card" id="fateLineCard">
+                        <div class="line-header">
+                            <h4>⭐ Fate Line</h4>
+                            <div class="line-score" id="fateLineScore">--</div>
+                        </div>
+                        <div class="line-content">
+                            <p class="line-interpretation" id="fateLineInterpretation">Loading...</p>
+                            <div class="line-characteristics" id="fateLineCharacteristics">
+                                <!-- Characteristics will be populated -->
+                            </div>
+                            <div class="line-details" id="fateLineDetails"></div>
+                        </div>
+                        <button class="learn-more-btn" onclick="toggleLineDetails('fateLine')">Learn More</button>
+                        <div class="line-expanded" id="fateLineExpanded" style="display: none;">
+                            <p><strong>About the Fate Line:</strong> The fate line runs vertically up your palm and represents your career path, life direction, and sense of purpose.</p>
+                        </div>
+                    </div>
+
+                    <!-- Hand Shape Analysis -->
+                    <div class="line-card" id="handShapeCard">
+                        <div class="line-header">
+                            <h4>✋ Hand Shape</h4>
+                            <div class="line-score" id="handShapeScore">--</div>
+                        </div>
+                        <div class="line-content">
+                            <p class="line-interpretation" id="handShapeInterpretation">Loading...</p>
+                            <div class="line-characteristics" id="handShapeCharacteristics">
+                                <!-- Characteristics will be populated -->
+                            </div>
+                            <div class="line-details" id="handShapeDetails"></div>
+                        </div>
+                        <button class="learn-more-btn" onclick="toggleLineDetails('handShape')">Learn More</button>
+                        <div class="line-expanded" id="handShapeExpanded" style="display: none;">
+                            <p><strong>About Hand Shape:</strong> Your hand shape reflects your fundamental personality type and approach to life. Different shapes indicate different temperaments and characteristics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="shareBtn" class="btn-primary">📤 Share Results</button>
+                <button id="downloadBtn" class="btn-secondary">💾 Download Report</button>
+                <button id="newReadingBtn" class="btn-secondary" onclick="location.href='/'">🔄 New Reading</button>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <p><strong>Disclaimer:</strong> This palmistry analysis is for entertainment purposes only and should not be used for making important life decisions. Results are based on traditional palmistry interpretations and AI analysis of palm features.</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 CogniSense Palmistry Analyzer. For entertainment purposes only.</p>
+        </footer>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="shareModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Share Your Reading</h3>
+                <button class="close-modal" onclick="closeShareModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="share-options">
+                    <button class="share-option" onclick="shareOnSocial('twitter')">
+                        <span>🐦</span> Twitter
+                    </button>
+                    <button class="share-option" onclick="shareOnSocial('facebook')">
+                        <span>📘</span> Facebook
+                    </button>
+                    <button class="share-option" onclick="copyLink()">
+                        <span>🔗</span> Copy Link
+                    </button>
+                </div>
+                <div class="share-preview" id="sharePreview">
+                    <!-- Preview of shareable content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get analysis data from URL parameters or local storage
+        let analysisData = null;
+
+        // Functions to handle line detail toggles
+        function toggleLineDetails(lineType) {
+            const expanded = document.getElementById(lineType + 'Expanded');
+            const btn = expanded.previousElementSibling;
+            
+            if (expanded.style.display === 'none') {
+                expanded.style.display = 'block';
+                btn.textContent = 'Show Less';
+            } else {
+                expanded.style.display = 'none';
+                btn.textContent = 'Learn More';
+            }
+        }
+
+        // Share functionality
+        function closeShareModal() {
+            document.getElementById('shareModal').style.display = 'none';
+        }
+
+        function shareOnSocial(platform) {
+            const text = "Check out my palmistry reading from CogniSense!";
+            const url = window.location.href;
+            
+            let shareUrl;
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    break;
+            }
+            
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+
+        // Load analysis data when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Try to get data from sessionStorage
+            const storedData = sessionStorage.getItem('palmistryAnalysis');
+            if (storedData) {
+                analysisData = JSON.parse(storedData);
+                populateResults(analysisData);
+            }
+        });
+
+        function populateResults(data) {
+            if (!data || !data.analysis) return;
+
+            const analysis = data.analysis;
+
+            // Populate overall summary
+            document.getElementById('overallSummary').innerHTML = `
+                <p>${analysis.overall_summary}</p>
+            `;
+
+            // Populate images
+            if (data.original_image) {
+                document.getElementById('originalImage').src = data.original_image;
+            }
+            if (data.annotated_image) {
+                document.getElementById('analyzedImage').src = data.annotated_image;
+            }
+
+            // Populate personality scores
+            const scoresGrid = document.getElementById('personalityScores');
+            scoresGrid.innerHTML = '';
+            
+            const scoreLabels = {
+                'creativity': 'Creativity',
+                'leadership': 'Leadership',
+                'emotional_intelligence': 'Emotional Intelligence',
+                'analytical_thinking': 'Analytical Thinking',
+                'intuition': 'Intuition',
+                'vitality': 'Vitality'
+            };
+
+            for (const [key, value] of Object.entries(analysis.personality_scores)) {
+                const scoreCard = document.createElement('div');
+                scoreCard.className = 'score-card';
+                scoreCard.innerHTML = `
+                    <div class="score-label">${scoreLabels[key] || key}</div>
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: ${value}%"></div>
+                    </div>
+                    <div class="score-value">${value}%</div>
+                `;
+                scoresGrid.appendChild(scoreCard);
+            }
+
+            // Populate life aspects
+            const aspectsGrid = document.getElementById('lifeAspects');
+            aspectsGrid.innerHTML = '';
+
+            for (const [key, aspect] of Object.entries(analysis.life_aspects)) {
+                const aspectCard = document.createElement('div');
+                aspectCard.className = 'aspect-card';
+                aspectCard.innerHTML = `
+                    <h4>${key.charAt(0).toUpperCase() + key.slice(1)}</h4>
+                    <div class="aspect-score">${aspect.score}%</div>
+                    <p>${aspect.outlook}</p>
+                `;
+                aspectsGrid.appendChild(aspectCard);
+            }
+
+            // Populate line analyses
+            populateLineAnalysis('lifeLine', analysis.life_line);
+            populateLineAnalysis('heartLine', analysis.heart_line);
+            populateLineAnalysis('headLine', analysis.head_line);
+            populateLineAnalysis('fateLine', analysis.fate_line);
+            populateLineAnalysis('handShape', analysis.hand_shape);
+        }
+
+        function populateLineAnalysis(lineType, lineData) {
+            if (!lineData) return;
+
+            document.getElementById(lineType + 'Score').textContent = lineData.score + '%';
+            document.getElementById(lineType + 'Interpretation').textContent = lineData.interpretation;
+            document.getElementById(lineType + 'Details').textContent = lineData.details || '';
+
+            const characteristicsDiv = document.getElementById(lineType + 'Characteristics');
+            characteristicsDiv.innerHTML = '';
+            
+            if (lineData.characteristics) {
+                lineData.characteristics.forEach(char => {
+                    const span = document.createElement('span');
+                    span.className = 'characteristic-tag';
+                    span.textContent = char;
+                    characteristicsDiv.appendChild(span);
+                });
+            }
+        }
+
+        // Event listeners
+        document.getElementById('shareBtn').addEventListener('click', () => {
+            document.getElementById('shareModal').style.display = 'block';
+        });
+
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            // Generate and download PDF report
+            window.print(); // Simple solution - opens print dialog
+        });
+    </script>
+</body>
+</html>

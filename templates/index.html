@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CogniSense Palmistry Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>🔮 CogniSense</h1>
+                <p class="tagline">AI-Powered Palmistry Analysis</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📱</div>
+                    <h2>Upload Your Palm Image</h2>
+                    <p class="upload-description">
+                        Take a clear photo of your palm with good lighting. 
+                        Make sure your hand is fully visible and fingers are spread naturally.
+                    </p>
+                    
+                    <div class="upload-buttons">
+                        <label for="fileInput" class="btn-primary">
+                            Choose Image
+                            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                        </label>
+                        <button id="cameraBtn" class="btn-secondary">Use Camera</button>
+                    </div>
+                    
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <span id="fileName"></span>
+                        <button id="removeFile" class="remove-btn">×</button>
+                    </div>
+                </div>
+                
+                <div class="image-preview" id="imagePreview" style="display: none;">
+                    <img id="previewImg" alt="Palm preview">
+                    <div class="preview-actions">
+                        <button id="analyzeBtn" class="btn-primary">Analyze Palm</button>
+                        <button id="retakeBtn" class="btn-secondary">Choose Different Image</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-animation">
+                    <div class="spinner"></div>
+                    <h3>Analyzing Your Palm...</h3>
+                    <p>Our AI is examining your palm lines and features</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="loading-text" id="loadingText">Detecting hand landmarks...</p>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3>📋 Photography Tips</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">💡</div>
+                        <h4>Good Lighting</h4>
+                        <p>Use natural daylight or bright indoor lighting for clear line visibility</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">✋</div>
+                        <h4>Hand Position</h4>
+                        <p>Keep your hand flat and fingers naturally spread apart</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">📏</div>
+                        <h4>Distance</h4>
+                        <p>Hold camera 6-12 inches away to capture the entire palm clearly</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🎯</div>
+                        <h4>Focus</h4>
+                        <p>Ensure the palm lines are sharp and clearly visible in the image</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h3>About Palmistry Analysis</h3>
+                <p>
+                    Our AI-powered palmistry analyzer uses advanced computer vision to detect and interpret
+                    the major lines in your palm. The system analyzes your life line, heart line, head line,
+                    and fate line to provide insights into your personality, relationships, and life path.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>🤖 AI Detection</h4>
+                        <p>Advanced computer vision identifies palm landmarks and lines</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📊 Detailed Analysis</h4>
+                        <p>Comprehensive interpretation of all major palm lines</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎨 Visual Results</h4>
+                        <p>Annotated images showing detected lines and features</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📱 Instant Results</h4>
+                        <p>Get your palmistry reading in seconds, not hours</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 CogniSense Palmistry Analyzer. For entertainment purposes only.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
