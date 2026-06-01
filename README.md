@@ -1,7 +1,7 @@
 <h1 align="center">Cognisense – Palmistry Analyzer</h1>
 
 <p align="center">
-An AI-powered palm analysis system that interprets personality traits and behavioral patterns using computer vision.
+An AI-Powered palm analysis system that interprets personality traits and behavioral patterns using computer vision.
 </p>
 
 <hr>
